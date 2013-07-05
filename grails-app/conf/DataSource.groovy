@@ -13,8 +13,25 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            dbCreate = "update" // one of 'create', 'create-drop','update'
+            url = "jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false"
+            pooled = true
+            loggingSql = true
+            driverClassName = "com.mysql.jdbc.Driver"
+            username = "root"
+            password = "123"
+            dialect = org.hibernate.dialect.MySQL5Dialect
+            properties {
+                maxActive = 50
+                maxIdle = 25
+                minIdle = 5
+                initialSize = 5
+                maxWait = 10000
+                validationQuery = "select 1"
+                testWhileIdle = true
+                timeBetweenEvictionRunsMillis = 3600000
+                poolPreparedStatements = true
+            }
         }
     }
     test {

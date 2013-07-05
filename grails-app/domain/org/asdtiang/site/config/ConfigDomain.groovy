@@ -1,4 +1,4 @@
-package org.asdtiang.shop.site
+package org.asdtiang.site.config
 
 import org.asdtiang.grails.annotation.Title
 
@@ -16,5 +16,6 @@ class ConfigDomain {
     }
      static mapping = {
 		description(type:"text")
+		mapValue(type:"text")
     }
 }

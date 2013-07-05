@@ -71,23 +71,22 @@ environments {
 
 // log4j configuration
 log4j = {
-    // Example of changing the log pattern for the default console appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+    appenders {
+		console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+	}
 
-    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
-           'org.codehaus.groovy.grails.web.pages',          // GSP
-           'org.codehaus.groovy.grails.web.sitemesh',       // layouts
-           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-           'org.codehaus.groovy.grails.web.mapping',        // URL mapping
-           'org.codehaus.groovy.grails.commons',            // core / classloading
-           'org.codehaus.groovy.grails.plugins',            // plugins
-           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
+	info  appenders:'org.codehaus.groovy.grails.web.servlet',        // controllers
+			'org.codehaus.groovy.grails.web.pages',          // GSP
+			'org.codehaus.groovy.grails.web.sitemesh',       // layouts
+			'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+			'org.codehaus.groovy.grails.web.mapping',        // URL mapping
+			'org.codehaus.groovy.grails.commons',            // core / classloading
+			'org.codehaus.groovy.grails.plugins',            // plugins
+			'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
+			'org.springframework',
+			'org.hibernate',
+			'net.sf.ehcache.hibernate'
+	root { info() }
 }
 
 // Added by the Spring Security Core plugin:
@@ -96,14 +95,14 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.asdtiang.
 grails.plugins.springsecurity.authority.className = 'org.asdtiang.shop.auth.Role'
 grails.plugins.springsecurity.requestMap.className = 'org.asdtiang.shop.auth.Requestmap'
 grails.plugins.springsecurity.securityConfigType = 'Requestmap'
-
+grails.plugins.springsecurity.ui.password.validationRegex="\\S{6,64}"
 
 /** error messages */
-grails.plugins.springsecurity.errors.login.disabled = "¶Ô²»Æğ£¬ÓÃ»§ÒÑ¾­±»½ûÖ¹£¡"
-grails.plugins.springsecurity.errors.login.expired = "¶Ô²»Æğ£¬ÓÃ»§ÒÑ¾­ ¹ıÆÚ£¡"
-grails.plugins.springsecurity.errors.login.passwordExpired = "¶Ô²»Æğ£¬ÃÜÂëÒÑ¾­¹ıÆÚ£¡"
-grails.plugins.springsecurity.errors.login.locked = "¶Ô²»Æğ£¬ÓÃ»§±»Ëø¶¨£¡"
-grails.plugins.springsecurity.errors.login.fail = "ÓÃ»§Ãû»òÕßÃÜÂë²»ÕıÈ·£¡"
+grails.plugins.springsecurity.errors.login.disabled = "å¯¹ä¸èµ·ï¼Œç”¨æˆ·å·²ç»è¢«ç¦æ­¢ï¼"
+grails.plugins.springsecurity.errors.login.expired = "å¯¹ä¸èµ·ï¼Œç”¨æˆ·å·²ç» è¿‡æœŸï¼"
+grails.plugins.springsecurity.errors.login.passwordExpired = "å¯¹ä¸èµ·ï¼Œå¯†ç å·²ç»è¿‡æœŸï¼"
+grails.plugins.springsecurity.errors.login.locked = "å¯¹ä¸èµ·ï¼Œç”¨æˆ·è¢«é”å®šï¼"
+grails.plugins.springsecurity.errors.login.fail = "ç”¨æˆ·åæˆ–è€…å¯†ç ä¸æ­£ç¡®ï¼"
 
 // successHandler
 grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/login/loginAfter'
@@ -112,10 +111,10 @@ grails.plugins.springsecurity.successHandler.useReferer = false
 grails.plugins.springsecurity.successHandler.ajaxSuccessUrl = '/login/ajaxSuccess'
 grails {
 	mail {
-		host = "smtp.exmail.qq.com"
+		host = "smtp.sina.com"
 		port = 25
-		username = "sjzadmin@asdtiang.org"
-		password = "159357"
+		username = "asdtiang@sina.com"
+		password = "asdtiangmail2011"
 		props = ["mail.smtp.auth":"true" ]
 	}
 }
@@ -127,7 +126,7 @@ You (or someone pretending to be you) created an account with this email address
 If you made the request, please click&nbsp;<a href="$url">here</a> to finish the registration.
 '''
 grails.plugins.springsecurity.ui.register.emailFrom="sjzadmin@asdtiang.org"
-grails.plugins.springsecurity.ui.register.emailSubject="ĞÂÓÃ»§×¢²áÍ¨Öª"
+grails.plugins.springsecurity.ui.register.emailSubject="register ok"
 grails.plugins.springsecurity.ui.register.defaultRoleNames=['ROLE_USER']
 grails.plugins.springsecurity.ui.register.postRegisterUrl=null
 grails.plugins.springsecurity.ui.forgotPassword.emailBody='''\
@@ -139,10 +138,10 @@ If you didn't make this request then ignore the email; no changes have been made
 <br/>
 If you did make the request, then click <a href="$url">here</a> to reset your password.
 
-ÖØÖÃÃÜÂëÇëÇó
+é‡ç½®å¯†ç è¯·æ±‚
 '''
 grails.plugins.springsecurity.ui.forgotPassword.emailFrom="sjzadmin@asdtiang.org"
-grails.plugins.springsecurity.ui.forgotPassword.emailSubject='ÖØÖÃÃÜÂë'
+grails.plugins.springsecurity.ui.forgotPassword.emailSubject='é‡ç½®å¯†ç '
 grails.plugins.springsecurity.ui.forgotPassword.postResetUrl=null
 
 ckeditor {

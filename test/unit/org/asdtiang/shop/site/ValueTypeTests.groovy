@@ -3,6 +3,8 @@ package org.asdtiang.shop.site
 
 
 import grails.test.mixin.*
+
+import org.asdtiang.site.config.ValueType;
 import org.junit.*
 
 /**
