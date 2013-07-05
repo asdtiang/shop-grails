@@ -10,3 +10,7 @@
 /.settings
 .classpath
 .project
+shop.iml
+shop-grailsPlugins.iml
+stacktrace.log
+/.idea
