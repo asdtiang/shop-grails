@@ -1,7 +1,7 @@
 package org.asdtiang.shop
 
 import org.asdtiang.grails.annotation.Title
-import org.asdtiang.logistics.LogisticsInfo
+import org.asdtiang.shop.logistics.LogisticsInfo
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,16 +34,15 @@ class OrderInfo {
      */
     @Title("订单数据")
     String orderJson
-
-    static hasOne = [logisticsInfo:LogisticsInfo]
+    @Title("物流信息")
+    LogisticsInfo  logisticsInfo
 
     static constraints = {
         email email: true
         name require:true
-        postcode matches: "\\d{6}"
     }
     static mapping = {
-        logisticsInfo fetch:'join'
+        logisticsInfo lazy: false
         orderJson type:'text'
     }
     static enum  OrderStatus{

@@ -6,6 +6,7 @@ class User {
 
 	String username
 	String password
+    String email
 	boolean enabled
 	boolean accountExpired
 	boolean accountLocked
@@ -14,6 +15,7 @@ class User {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+        email email:true
 	}
 
 	static mapping = {
@@ -25,16 +27,9 @@ class User {
 	}
 
 	def beforeInsert() {
-		encodePassword()
 	}
 
 	def beforeUpdate() {
-		if (isDirty('password')) {
-			encodePassword()
-		}
 	}
 
-	protected void encodePassword() {
-		password = springSecurityService.encodePassword(password)
-	}
 }

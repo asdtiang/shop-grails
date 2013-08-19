@@ -10,3 +10,5 @@ plugins
 target
 target-eclipse
 .settings
+work
+test

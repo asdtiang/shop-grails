@@ -24,7 +24,6 @@ class StaticMethod {
         return configMap
     }
 
-   
 	public static String UnicodeToString(String str) {
 		Pattern pattern = Pattern.compile("(\\\\u(\\w{4}))");
 		Matcher matcher = pattern.matcher(str);

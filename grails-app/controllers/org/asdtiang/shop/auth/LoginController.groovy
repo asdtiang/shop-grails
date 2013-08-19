@@ -91,6 +91,8 @@ class LoginController {
 	def authfail = {
 
 		def username = session[UsernamePasswordAuthenticationFilter.SPRING_SECURITY_LAST_USERNAME_KEY]
+        log.info springSecurityService.encodePassword("shop_2013","asdtiang")
+        log.info springSecurityService.encodePassword("shop_2013")
 		String msg = ''
 		def exception = session[WebAttributes.AUTHENTICATION_EXCEPTION]
 		if (exception) {

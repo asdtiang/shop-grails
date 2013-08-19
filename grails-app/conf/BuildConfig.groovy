@@ -31,7 +31,9 @@ grails.project.dependency.resolution = {
         grailsHome()
         grailsCentral()
 
+
         mavenLocal()
+        mavenRepo "http://code.alibabatech.com/mvn/releases/"
         mavenCentral()
 		mavenRepo "http://maven.springframework.org/milestone/"
 
@@ -44,8 +46,8 @@ grails.project.dependency.resolution = {
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-			
-         runtime 'mysql:mysql-connector-java:5.1.22'
+        runtime 'mysql:mysql-connector-java:5.1.22'
+        runtime 'com.alibaba:fastjson:1.1.23'
     }
 
     plugins {
