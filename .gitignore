@@ -12,3 +12,7 @@ target-eclipse
 .settings
 work
 test
+/.classpath
+/.project
+/shop.iml
+/shop-grailsPlugins.iml
